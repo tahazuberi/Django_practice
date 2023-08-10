@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Django Application</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+    <h2>here are the access records</h2>
+       
+    <div>
+        {%if access_record%}
+            <table border="5">
+                <thead>
+                    <th>Name</th>
+                    <th>Date</th>
+                </thead>
+
+        {%for i in access_record%}
+            <tr>
+                <td>{{i.name}}</td>
+                <td>{{i.date}}</td>
+            </tr>
+            {%endfor%}
+            </table>
+            {%else%}
+            <p>No Access Records Found</p>
+            {%endif%}
+    </div>
+      
+
+        
+</body>
+</html>
